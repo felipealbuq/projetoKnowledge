@@ -1,7 +1,12 @@
 module.exports = app => {
 
     // Com o uso do consign, no momento que for carregado os arquivos no index.js será obtido de forma 
-    // semelhante à um require    
+    // semelhante à um require   
+    app.post('/signup',app.api.user.save)
+    app.post('/signin',app.api.auth.signin)
+    app.post('/validadeToken',app.api.auth.validateToken)
+    
+    
     app.route('/users')
         .post(app.api.user.save)
         .get(app.api.user.get)
@@ -30,10 +35,12 @@ module.exports = app => {
     app.route('/articles')
         .get(app.api.article.get)
         .post(app.api.article.save)
+    
     app.route('/articles/:id')
         .get(app.api.article.getById)
         .put(app.api.article.save)
         .delete(app.api.article.remove)
+    
     app.route('/categories/:id/articles')
         .get(app.api.article.getByCategory) 
 } 
