@@ -24,7 +24,7 @@ module.exports = app =>{
 
         if (changeUsers || changeCategories || changeArticles){
             stat.save().then(()=>console.log('[Stats] Estatísticas atualizadas!'))    
-        }
+        } 
 
     })
 }
