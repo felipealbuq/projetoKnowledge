@@ -1,4 +1,4 @@
- <template>
+<template>
     <header class="header">
         <a class="toggle" @click="toggleMenu" v-if="!hideToggle">
             <i class="fa fa-lg" :class="icon"></i>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import UserDropdown from './UserDropdown'
+import UserDropdown from './UserDropDown.vue' 
 
 export default {
     name: 'Header',

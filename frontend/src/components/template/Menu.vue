@@ -1,4 +1,4 @@
- <template>
+<template>
     <aside class="menu" v-show="isMenuVisible">
         <div class="menu-filter">
             <i class="fa fa-search fa-lg"></i>
@@ -12,7 +12,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import Tree from 'liquor-tree'
+import Tree from 'liquor-tree' 
 import { baseApiUrl } from '@/global'
 import axios from 'axios'
 
@@ -61,17 +61,26 @@ export default {
         flex-direction: column;
         flex-wrap: wrap;
     }
-
-    .menu a,
-    .menu a:hover {
+    
+    .menu span,
+    .menu span:hover{
         color: #fff;
         text-decoration: none;
     }
 
-    .menu .tree-node.selected > .tree-content,
-    .menu .tree-node .tree-content:hover {
-        background-color: rgba(255, 255, 255, 0.2);
+    .menu a,
+    .menu a:hover {
+        /* color: #fff; */
+        text-decoration: none;
     }
+
+   .menu .tree-node:not(.selected) > .tree-content:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+ 
+.menu .tree-node.selected > .tree-content {
+    background-color: rgba(0, 0, 0, 0.2);
+}
 
     .tree-arrow.has-child {
         filter: brightness(2);
